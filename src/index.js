@@ -6,7 +6,7 @@ const Propina = require('../models/propina.model');
 const { buscarPropinas } = require('./buscar');
 
 // URL de conexión a la base de datos en MongoDB Atlas
-const mongoURI = 'mongodb+srv://jordan-zamora_01:Ch4rizh44@atlascluster.sjsljao.mongodb.net/restaurante';
+const mongoURI = 'mongodb+srv://belgica-delgado_01:belgica1991@cluster0.r7xacjp.mongodb.net/restaurante';
 
 (async ()=>{
   try {
@@ -14,15 +14,15 @@ const mongoURI = 'mongodb+srv://jordan-zamora_01:Ch4rizh44@atlascluster.sjsljao.
     // Configuración de Mongoose para conectarse a la base de datos
     const connection = await mongoose.connect(mongoURI)
 
-    /*
     // Agregar clientes a la base de datos
     await Cliente.insertMany(require('./datos').clientes);
     // Agregar meseros a la base de datos
     await Mesero.insertMany(require('./datos').meseros);
     // Agregar propina a la base de datos
     await Propina.insertMany(require('./datos').propinas);
-    */
 
+    /*
+    // Utilizar cuando se haya subido los datos de clientes, meseros y propinas en MongoDB
     // Imprimir los datos de las colecciones
     console.log('Clientes:');
     await Cliente.find({}, (err, clientes) => {
@@ -41,6 +41,7 @@ const mongoURI = 'mongodb+srv://jordan-zamora_01:Ch4rizh44@atlascluster.sjsljao.
       if (err) console.log(err);
       console.log(propinas);
     });
+    */
     
     // Buscar las propinas de un mesero por terminal
     const propinas = await buscarPropinas(1313121306);
